@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+actor Aluno as aluno
+actor "Secretaria da Universidade" as secretaria
+actor Professor as professor
+
+usecase "Matricular-se" as Matricular
+usecase "Cancelar Matrícula" as CancelarMatricula
+usecase "Gerar Currículo" as GerarCurriculo
+usecase "Gerenciar Períodos de Matrícula" as GerenciarPeriodos
+usecase "Ativar ou Desativar Disciplinas" as GerenciarDisciplinas
+usecase "Consultar Alunos" as ConsultarAlunos
+usecase "Login" as Login
+
+aluno --> Matricular
+aluno --> CancelarMatricula
+aluno --> Login
+
+secretaria --> GerarCurriculo
+secretaria --> GerenciarPeriodos
+secretaria --> GerenciarDisciplinas
+secretaria --> Login
+
+professor --> ConsultarAlunos
+professor --> Login
+
+Matricular --> GerenciarPeriodos : "Verificar Período de Matrícula"
+GerenciarPeriodos --> GerenciarDisciplinas : "Verificar Ativação/Desativação de Disciplinas"
+@enduml
