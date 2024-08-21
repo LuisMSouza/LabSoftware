@@ -14,16 +14,13 @@ usecase "Login" as Login
 
 aluno --> Matricular
 aluno --> CancelarMatricula
-aluno --> Login
 
 secretaria --> GerarCurriculo
 secretaria --> GerenciarPeriodos
 secretaria --> GerenciarDisciplinas
-secretaria --> Login
 
 professor --> ConsultarAlunos
-professor --> Login
-
+professor .> Login : extends
 Matricular --> GerenciarPeriodos : "Verificar Período de Matrícula"
 GerenciarPeriodos --> GerenciarDisciplinas : "Verificar Ativação/Desativação de Disciplinas"
 @enduml
