@@ -1,0 +1,71 @@
+@startuml
+
+
+class Curso {
+    - nome: String
+    - numeroDeCreditos: int
+    - disciplinas: List<Disciplina>
+    + adicionarDisciplina(disciplina: Disciplina): void
+    + removerDisciplina(disciplina: Disciplina): void
+    + listarDisciplinas(): List<Disciplina>
+}
+
+class Disciplina {
+    - nome: String
+    - codigo: String
+    - numeroDeCreditos: int
+    - status: boolean
+    + adicionarTurma(turma: Turma): void
+    + removerTurma(turma: Turma): void
+    + verificarAtivacao(): boolean
+    + encerrarMatriculas(): void
+}
+
+class Aluno extends Usuario {
+    - nome: String
+    - matricula: String
+    + matricularEmDisciplina(disciplina: Disciplina, obrigatoria: boolean): boolean
+    + cancelarMatricula(disciplina: Disciplina): boolean
+    + verificarDisciplinasMatriculadas(): List<Disciplina>
+    + notificarSistemaDeCobrancas(): void
+}
+
+class Professor extends Usuario {
+    - nome: String
+    - codigo: String
+    + acessarListaAlunos(disciplina: Disciplina): List<Aluno>
+}
+
+class Turma {
+    - semestre: String
+    - numeroDeAlunos: int
+    - professor: Professor
+    - alunos: List <Aluno>
+    + adicionarAluno(aluno: Aluno): boolean
+    + removerAluno(aluno: Aluno): boolean
+    + verificarNumeroAlunos(): int
+    + encerrarMatriculas(): void
+    + associarProfessor(professor: Professor): void
+}
+
+
+
+class Usuario {
+    - login: String
+    - senha: String
+    + autenticar(login: String, senha: String): boolean
+    + alterarSenha(login: String, senha: String, novaSenha: String): void
+}
+
+
+
+Curso "N" -- "N" Disciplina: inclui
+
+
+Turma "1" o-- "1" Disciplina: contem
+
+Turma "0..6" o-- "3..60" Aluno: contem
+
+Turma "1" *-- "1" Professor: é ministrada por
+
+@enduml
