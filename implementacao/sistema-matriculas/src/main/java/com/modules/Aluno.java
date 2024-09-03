@@ -1,7 +1,9 @@
+package com.modules;
+
 import java.util.List;
 
 public class Aluno extends Usuario{
-       private String nome;
+    private String nome;
     private String matricula;
 
     public boolean matricularEmDisciplina(Disciplina disciplina, boolean obrigatoria) {

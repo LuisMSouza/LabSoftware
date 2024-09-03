@@ -1,3 +1,5 @@
+package com.modules;
+
 import java.util.List;
 
 public class Curso {

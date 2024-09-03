@@ -1,7 +1,9 @@
+package com.modules;
+
 import java.util.List;
 
 public class Turma {
-     private String semestre;
+    private String semestre;
     private int numeroDeAlunos;
     private Professor professor;
     private List<Aluno> alunos;
