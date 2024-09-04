@@ -18,10 +18,11 @@ public class App {
     public static void main( String[] args ) {
         // Utilize esse script comentado apenas para popular o banco de dados com alguns usuários
 
-/*         DatabaseConnection.dropTables();
+        DatabaseConnection.dropTables();
         DatabaseConnection.initalizeDatabase();
         Auth.registerStudent("student1", "student", "Student 1", "123456");
-        Auth.registerProfessor("professor1", "professor", "Professor 1", "654321"); */
+        Auth.registerProfessor("professor1", "professor", "Professor 1", "654321");
+        
         Scanner scanner = new Scanner(System.in);
 
         authenticate();

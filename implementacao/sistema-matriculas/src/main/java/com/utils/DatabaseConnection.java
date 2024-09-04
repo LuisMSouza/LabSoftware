@@ -21,6 +21,11 @@ public class DatabaseConnection {
             statement.execute("DROP TABLE IF EXISTS aluno");
             statement.execute("DROP TABLE IF EXISTS professor");
             statement.execute("DROP TABLE IF EXISTS users");
+            statement.execute("DROP TABLE IF EXISTS curso");
+            statement.execute("DROP TABLE IF EXISTS disciplina");
+            statement.execute("DROP TABLE IF EXISTS curso_disciplina");
+            statement.execute("DROP TABLE IF EXISTS turma");
+            statement.execute("DROP TABLE IF EXISTS turma_aluno");
             System.out.println("Tabelas removidas com sucesso!");
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,8 +35,13 @@ public class DatabaseConnection {
     public static void initalizeDatabase() {
         try (Connection connection = getConnection()) {
             CreateTables.createUserTable();
-            CreateTables.createAlunoTable();
             CreateTables.createProfessorTable();
+            CreateTables.createAlunoTable();
+            CreateTables.createCursoTable();
+            CreateTables.createDisciplinaTable();
+            CreateTables.createCursoDisciplinaTable();
+            CreateTables.createTurmaTable();
+            CreateTables.createTurmaAlunoTable();
         } catch (SQLException e) {
             e.printStackTrace();
         }
