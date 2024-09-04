@@ -1,5 +1,7 @@
 package com.modules;
 
+import com.modules.Usuario;
+
 public class Aluno extends Usuario {
     private String matricula;
 

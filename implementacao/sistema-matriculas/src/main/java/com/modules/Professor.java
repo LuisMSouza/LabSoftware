@@ -1,6 +1,7 @@
 package com.modules;
 
 import com.modules.Aluno;
+import com.modules.Usuario;
 import java.util.List;
 import java.util.ArrayList;
 import com.utils.UserUtils;
