@@ -1,14 +1,27 @@
 package com.modules;
 
+import com.modules.Aluno;
 import java.util.List;
+import java.util.ArrayList;
+import com.utils.UserUtils;
 
 public class Professor extends Usuario {
-    
-    private String nome;
     private String codigo;
 
-    public List<Aluno> acessarListaAlunos(Disciplina disciplina) {
-        // TODO implementação
-        return null;
+    public Professor(String login, String nome, String codigo) {
+        super(login, null, nome, "professor");
+        this.codigo = codigo;
+    }
+
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public List<Aluno> acessarListaAlunos() {
+        return UserUtils.getStudents();
     }
 }

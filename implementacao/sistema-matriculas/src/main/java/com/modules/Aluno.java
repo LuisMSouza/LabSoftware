@@ -1,27 +1,19 @@
 package com.modules;
 
-import java.util.List;
-
-public class Aluno extends Usuario{
-    private String nome;
+public class Aluno extends Usuario {
     private String matricula;
 
-    public boolean matricularEmDisciplina(Disciplina disciplina, boolean obrigatoria) {
-        // TODO implementação
-        return false;
+    public Aluno(String login, String nome, String matricula) {
+        super(login, null, nome, "aluno");
+        this.matricula = matricula;
     }
 
-    public boolean cancelarMatricula(Disciplina disciplina) {
-        // TODO implementação
-        return false;
+    public String getNome() {
+        return this.nome;
     }
 
-    public List<Disciplina> verificarDisciplinasMatriculadas() {
-        // TODO implementação
-        return null;
+    public String getMatricula() {
+        return matricula;
     }
 
-    public void notificarSistemaDeCobrancas() {
-        // TODO implementação
-    }
 }
