@@ -1,25 +1,24 @@
 package com.modules;
+import com.modules.Turma;
 
 public class Disciplina {
     private String nome;
     private String codigo;
     private int numeroDeCreditos;
-    private boolean status;
+    private boolean obrigatoria;
 
-    public void adicionarTurma(Turma turma) {
-        // TODO implementação
+    public Disciplina(String nome, String codigo, int numeroDeCreditos, boolean obrigatoria) {
+        this.nome = nome;
+        this.codigo = codigo;
+        this.numeroDeCreditos = numeroDeCreditos;
+        this.obrigatoria = obrigatoria;
     }
 
-    public void removerTurma(Turma turma) {
-        // TODO implementação
+    public String getNome() {
+        return this.nome;
     }
 
-    public boolean verificarAtivacao() {
-        // TODO implementação
-        return false;
-    }
-
-    public void encerrarMatriculas() {
-        // TODO implementação
+    public String getCodigo() {
+        return this.codigo;
     }
 }
